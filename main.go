@@ -45,7 +45,7 @@ func main() {
 	}
 	defer close()
 
-	server := web.NewServer(db, shards, *replica)
+	server := web.NewServer(db, shards)
 
 	http.HandleFunc("/get", server.GetHandler)
 	http.HandleFunc("/set", server.SetHandler)

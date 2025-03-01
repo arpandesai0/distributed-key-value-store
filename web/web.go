@@ -12,17 +12,15 @@ import (
 
 // Server contains HTTP method handlers to be used for the database.
 type Server struct {
-	db      *db.Database
-	shards  *config.Shards
-	replica bool
+	db     *db.Database
+	shards *config.Shards
 }
 
 // NewServer creates a new Server instance with HTTP handlers to be used to get and set values.
-func NewServer(db *db.Database, shards *config.Shards, replica bool) *Server {
+func NewServer(db *db.Database, shards *config.Shards) *Server {
 	return &Server{
-		db:      db,
-		shards:  shards,
-		replica: replica,
+		db:     db,
+		shards: shards,
 	}
 }
 
