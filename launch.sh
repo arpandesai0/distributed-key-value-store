@@ -20,16 +20,16 @@ sleep 0.1
 # Start the distributed key-value store instances
 echo "Starting distributed key-value store instances..."
 bin/distributed-key-value-store --db-location=a.db --http-addr=127.0.0.1:8080 --config-file=sharding.toml -shard=A &
-bin/distributed-key-value-store --db-location=a.db --http-addr=127.0.0.11:8080 --config-file=sharding.toml -shard=A -replica &
+bin/distributed-key-value-store --db-location=a-replica.db --http-addr=127.0.0.11:8080 --config-file=sharding.toml -shard=A -replica &
 
 bin/distributed-key-value-store --db-location=b.db --http-addr=127.0.0.2:8080 --config-file=sharding.toml -shard=B &
-bin/distributed-key-value-store --db-location=a.db --http-addr=127.0.0.22:8080 --config-file=sharding.toml -shard=B -replica &
+bin/distributed-key-value-store --db-location=b-replica.db --http-addr=127.0.0.22:8080 --config-file=sharding.toml -shard=B -replica &
 
 bin/distributed-key-value-store --db-location=c.db --http-addr=127.0.0.3:8080 --config-file=sharding.toml -shard=C &
-bin/distributed-key-value-store --db-location=a.db --http-addr=127.0.0.33:8080 --config-file=sharding.toml -shard=C -replica &
+bin/distributed-key-value-store --db-location=c-replica.db --http-addr=127.0.0.33:8080 --config-file=sharding.toml -shard=C -replica &
 
-bin/distributed-key-value-store --db-location=c.db --http-addr=127.0.0.4:8080 --config-file=sharding.toml -shard=C &
-bin/distributed-key-value-store --db-location=a.db --http-addr=127.0.0.44:8080 --config-file=sharding.toml -shard=C -replica &
+bin/distributed-key-value-store --db-location=d.db --http-addr=127.0.0.4:8080 --config-file=sharding.toml -shard=D &
+bin/distributed-key-value-store --db-location=d-replica.db --http-addr=127.0.0.44:8080 --config-file=sharding.toml -shard=D -replica &
 
 
 wait  # Wait for all background processes to finish
