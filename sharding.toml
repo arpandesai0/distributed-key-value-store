@@ -2,22 +2,22 @@
 name = "A"
 idx = 0
 address = "127.0.0.1:8080"
-replicas = ["127.0.0.11:8080]
+replicas = ["127.0.0.11:8080"]
 
 [[shards]]
 name = "B"
 idx = 1
 address = "127.0.0.2:8080"
-replicas = ["127.0.0.22:8080]
+replicas = ["127.0.0.22:8080"]
 
 [[shards]]
 name = "C"
 idx = 2
 address = "127.0.0.3:8080"
-replicas = ["127.0.0.33:8080]
+replicas = ["127.0.0.33:8080"]
 
 [[shards]]
 name = "D"
 idx = 3
 address = "127.0.0.4:8080"
-replicas = ["127.0.0.44:8080]
+replicas = ["127.0.0.44:8080"]

@@ -13,7 +13,7 @@ type Shard struct {
 	Name     string
 	Idx      int
 	Address  string
-	Replicas [][]byte
+	Replicas []string
 }
 
 // Config describes the sharding config
